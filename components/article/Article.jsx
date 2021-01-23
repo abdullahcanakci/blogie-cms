@@ -1,8 +1,8 @@
 export default function Article({ article }) {
   return (
-    <div>
-      <h2>{article.title}</h2>
-      <div>{article.content}</div>
+    <div className="prose">
+      <h1>{article.title}</h1>
+      <div className="text-gray-200 text-justify">{article.content}</div>
     </div>
   );
 }
