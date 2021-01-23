@@ -15,7 +15,7 @@ export default function ArticleCard({ article }) {
       <div className="flex justify-end">
         <Link
           className="text-right cursor-pointer"
-          href={`/articles/${article.id}`}
+          href={`/articles/${article.slug}`}
         >
           Read more...
         </Link>

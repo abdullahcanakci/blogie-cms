@@ -17,7 +17,7 @@ export default function ArticlePage({ article }) {
   Article;
   return (
     <Layout>
-      {router.isFallback ? <div>Loading...</div> : <div>{article.id}</div>}
+      <Article article={article} />
     </Layout>
   );
 }
@@ -33,9 +33,12 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context) {
-  const { article_id } = context.params;
-  const res = await fetch(`${HOST}/api/articles/${article_id}`);
-  const article = await res.json();
+  const { article_slug } = context.params;
+  const res = await fetch(`${HOST}/api/articles/${article_slug}`);
+  var article;
+  try {
+    article = await res.json();
+  } catch (error) {}
   if (!article) {
     return { notFound: true };
   }

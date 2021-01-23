@@ -1,13 +1,14 @@
 import { connectToDatabase } from "@utils/mongodb";
-
 export default async function handler(req, res) {
+  const {
+    query: { article_slug },
+  } = req;
+
   const { db } = await connectToDatabase();
 
-  const articles = await db
+  const article = await db
     .collection("articles")
-    .find({}, { _id: 0, title: 1, abstract: 1, slug: 1 })
-    .limit(10)
-    .toArray();
+    .findOne({ slug: article_slug });
 
-  res.json(articles);
+  res.json(article);
 }
