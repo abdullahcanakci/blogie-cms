@@ -1,1 +1,1 @@
-export const HOST = process.env.HOST;
+export const HOST = process.env.NEXT_PUBLIC_HOST;

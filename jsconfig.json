@@ -7,7 +7,9 @@
       "@pages/*": ["/pages/*"],
       "@styles/*": ["/styles/*"],
       "@utils/*": ["/utils/*"],
-      "@api/*": ["/pages/api/*"]
+      "@api/*": ["/pages/api/*"],
+      "@hooks/*": ["/hooks/*"],
+      "@config/*": ["/config/*"]
     }
   }
 }

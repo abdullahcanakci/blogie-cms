@@ -5,7 +5,7 @@ export default function ArticleCard({ article }) {
     <div className="shadow sm:rounded-lg bg-gray-600 my-4 p-4 text-white hover:shadow-lg">
       {/* Card Header */}
       <div className="pt-2 pb-4 sm:px-6">
-        <h3>{article.title}</h3>
+        <h1 className="text-lg font-bold">{article.title}</h1>
       </div>
       {/* Card Body */}
       <div className="pb-2">
