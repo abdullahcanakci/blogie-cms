@@ -28,8 +28,9 @@ I wanted something statically generated for blogs but also has dynamicity for se
 - [ ] Articles List
 - [ ] Draft System
 - [ ] Insert/Update
-
-
+- [x] Auth
+  - [x] Login
+  - [x] Register
 
 ### To Use
 
@@ -37,7 +38,7 @@ Copy `.env.example`file to `.env` and update information.
 
 Run either one in order.
 
-``` bash
+```bash
 yarn install
 yarn dev
 ```
@@ -46,4 +47,3 @@ yarn dev
 npm install
 npm run dev
 ```
-
