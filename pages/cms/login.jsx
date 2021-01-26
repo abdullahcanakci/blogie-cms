@@ -28,7 +28,7 @@ export default function LoginPage() {
 
   return (
     <CmsLayout>
-      <div className="flex flex-col sm:min-w-full md:max-w-1/2">
+      <div className="md:w-1/3 sm:w-full h-screen object-center flex items-center mx-auto">
         <Form value={auth} setValue={setAuth} onSave={onLogin}>
           <Input label="Email" placeholder="Enter your email" />
           <Input label="Password" placeholder="Enter your password" />

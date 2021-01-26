@@ -22,7 +22,7 @@ export default function Form({
 
   // TODO: unique id
   return (
-    <div>
+    <div className="w-full">
       <div>
         {children.map((child) =>
           React.cloneElement(child, {
@@ -40,7 +40,7 @@ export default function Form({
           })
         )}
       </div>
-      <div className="px-4 py-3 text-right sm:px-6">
+      <div className="text-right">
         <Button onSave={onSaveEvent} />
       </div>
     </div>

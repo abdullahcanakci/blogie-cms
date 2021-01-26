@@ -28,8 +28,7 @@ export default function RegisterPage() {
 
   return (
     <CmsLayout>
-      r
-      <div className="flex flex-col sm:min-w-full md:max-w-1/2">
+      <div className="md:w-1/3 sm:w-full h-screen object-center flex items-center mx-auto">
         <Form value={auth} setValue={setAuth} onSave={onRegister}>
           <Input label="Email" placeholder="Enter your email" />
           <Input label="Password" placeholder="Enter your password" />
@@ -40,7 +39,7 @@ export default function RegisterPage() {
 }
 
 export async function getServerSideProps() {
-  if (process.env.REGISTER_ENABLED !== true) {
+  if (process.env.REGISTER_ENABLED !== "true") {
     return {
       redirect: {
         destination: "/cms/login",
