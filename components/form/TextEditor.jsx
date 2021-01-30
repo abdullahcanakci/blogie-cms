@@ -3,14 +3,15 @@ import Hint from "./Hint";
 import ReactQuill from "react-quill";
 
 export default function TextEditor({
-  value,
-  setValue,
+  values,
+  setValues,
   label,
   placeholder,
   hint,
+  dataKey,
 }) {
   const updateValue = (value) => {
-    setValue(value);
+    setValues(value, dataKey);
   };
   // TODO: unique id
   return (
@@ -18,7 +19,7 @@ export default function TextEditor({
       <Label label={label} />
       <ReactQuill
         theme="snow"
-        value={value}
+        value={values[dataKey]}
         onChange={updateValue}
         placeholder={placeholder}
         className="bg-white"

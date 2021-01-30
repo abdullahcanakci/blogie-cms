@@ -2,14 +2,15 @@ import Label from "./Label";
 import Hint from "./Hint";
 
 export default function Textarea({
-  value,
-  setValue,
+  values,
+  setValues,
   label,
   placeholder,
   hint,
+  dataKey,
 }) {
   const updateValue = (e) => {
-    setValue(e.target.value);
+    setValues(e.target.value, dataKey);
   };
   // TODO: unique id
   return (
@@ -17,10 +18,10 @@ export default function Textarea({
       <Label label={label} />
       <div className="mt-1">
         <textarea
-          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md px-4 py-2"
+          className="textarea"
           rows="6"
           placeholder={placeholder}
-          value={value}
+          value={values[dataKey]}
           onChange={updateValue}
         />
       </div>

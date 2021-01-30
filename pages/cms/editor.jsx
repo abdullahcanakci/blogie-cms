@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import CmsLayout from "@components/layouts/CmsLayout";
 import Input from "components/form/Input";
 import Textarea from "components/form/Textarea";
+import { ObjectId } from "mongodb";
 const Form = dynamic(() => import("components/form/Form"), {
   ssr: false,
 });
@@ -13,7 +14,7 @@ const TextEditor = dynamic(() => import("components/form/TextEditor"), {
 });
 
 export default function EditorPage({ article: prevArticle }) {
-  const [article, setArticle] = useState(prevArticle ?? {});
+  const [article, setArticle] = useState(prevArticle);
   console.log(HOST);
   useEffect(async () => {
     await checkSlug(article.slug, article._id);
@@ -27,16 +28,26 @@ export default function EditorPage({ article: prevArticle }) {
   return (
     <CmsLayout>
       <div className="flex flex-col sm:min-w-full md:max-w-1/2">
-        <Form value={article} setValue={setArticle} onSave={saveArticle}>
-          <Input label="Title" placeholder="Enter your post title" />
+        <Form initialState={prevArticle} onSave={saveArticle}>
+          <Input
+            label="Title"
+            dataKey="title"
+            placeholder="Enter your post title"
+          />
           <Input
             label="Slug"
+            dataKey="slug"
             placeholder="Your post slug"
             hint="Your post slug will appear here."
           />
-          <Textarea label="Abstract" hint="This will show up on lists etc." />
+          <Textarea
+            label="Abstract"
+            dataKey="abstract"
+            hint="This will show up on lists etc."
+          />
           <TextEditor
             label="Content"
+            dataKey="content"
             hint="Content of your article."
             placeholder="Your articles content"
           />
@@ -69,10 +80,10 @@ export async function getServerSideProps(context) {
   try {
     article = await res.json();
   } catch (error) {}
-  if (!article) {
-    article = {};
-  }
 
+  if (!article) {
+    article = { _id: new ObjectId().toHexString() };
+  }
   return {
     props: { article },
   };

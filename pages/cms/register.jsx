@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
-import CmsLayout from "@components/layouts/CmsLayout";
+import CenterLayout from "@components/layouts/CenterLayout";
 import Input from "components/form/Input";
 import useUser from "@utils/useUser";
 import fetchJson from "@utils/fetchJson";
@@ -9,8 +9,6 @@ const Form = dynamic(() => import("components/form/Form"), {
 });
 
 export default function RegisterPage() {
-  const [auth, setAuth] = useState({});
-
   const { mutateUser } = useUser({
     redirectTo: "/cms",
     redirectIfFound: true,
@@ -27,14 +25,16 @@ export default function RegisterPage() {
   };
 
   return (
-    <CmsLayout>
-      <div className="md:w-1/3 sm:w-full h-screen object-center flex items-center mx-auto">
-        <Form value={auth} setValue={setAuth} onSave={onRegister}>
-          <Input label="Email" placeholder="Enter your email" />
-          <Input label="Password" placeholder="Enter your password" />
-        </Form>
-      </div>
-    </CmsLayout>
+    <CenterLayout>
+      <Form onSave={onRegister} className="is-half">
+        <Input label="Email" dataKey="email" placeholder="Enter your email" />
+        <Input
+          label="Password"
+          dataKey="password"
+          placeholder="Enter your password"
+        />
+      </Form>
+    </CenterLayout>
   );
 }
 

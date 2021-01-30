@@ -24,7 +24,6 @@ export default withSession(async (req, res) => {
   }
 
   try {
-    // we check that the user exists on GitHub and store some data in session
     const userData = { isLoggedIn: true, email: user.email };
     req.session.set("user", userData);
     await req.session.save();

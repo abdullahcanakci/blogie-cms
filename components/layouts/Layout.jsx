@@ -9,7 +9,6 @@ export default function Layout({ children }) {
         <Header />
 
         <div className="max-w-prose mx-auto flex-grow">{children}</div>
-        <Footer />
       </div>
     </Background>
   );
