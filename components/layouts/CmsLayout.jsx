@@ -3,7 +3,12 @@ import Background from "./Background";
 export default function Layout({ children }) {
   return (
     <Background>
-      <div className="container mx-auto min-h-screen">{children}</div>
+      <div
+        className="columns is-marginless is-fullheight"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="column is-paddingless">{children}</div>
+      </div>
     </Background>
   );
 }

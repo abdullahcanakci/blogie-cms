@@ -62,14 +62,11 @@ async function checkSlug(slug, id) {
 }
 
 async function storeArticle(data) {
-  console.log("host", HOST);
-  const res = await fetch(`${HOST}/api/admin/articles/store`, {
+  await fetch(`/api/admin/articles/store`, {
     method: "POST",
     "content-type": "application/json",
     body: JSON.stringify(data),
-  }).then(async (res) => await res.json());
-  console.log(res);
-  var article;
+  });
 }
 
 export async function getServerSideProps(context) {
