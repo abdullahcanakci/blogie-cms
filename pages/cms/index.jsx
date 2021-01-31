@@ -2,33 +2,19 @@ import withSession from "@utils/withSession";
 import Layout from "components/layouts/CmsLayout";
 import Dropdown from "components/form/Dropdown";
 import { connectToDatabase } from "utils/mongodb";
+import Table from "components/table/table";
+import ArticleRow from "components/table/ArticleRow";
 
 export default function CmsPage({ user, articles }) {
+  const columnInfo = [
+    { className: "w-1/4", title: "Title" },
+    { className: "w-1/2", title: "Abstract" },
+    { className: "w-1/4", title: "Actions" },
+  ];
+
   return (
     <Layout>
-      <table className="table is-fullwidth is-striped is-hoverable">
-        <thead>
-          <tr>
-            <th className="w-1/4">Title</th>
-            <th className="w-1/2">Abstract</th>
-            <th className="w-1/4">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {articles.map((article) => (
-            <tr key={article._id}>
-              <td>{article.title}</td>
-              <td>{article.abstract}</td>
-              <td>
-                <Dropdown
-                  primaryLabel="Show"
-                  buttonClasses="is-small primary"
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Table renderer={ArticleRow} entries={articles} columns={columnInfo} />
     </Layout>
   );
 }

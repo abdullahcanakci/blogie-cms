@@ -47,7 +47,9 @@ export default function Form({ initialState = {}, onSave, children }) {
           )}
       </div>
       <div className="is-flex is-justify-content-flex-end">
-        <Button onSave={onSaveEvent} />
+        <Button onclick={onSaveEvent} iconRight="save">
+          Save
+        </Button>
       </div>
     </div>
   );

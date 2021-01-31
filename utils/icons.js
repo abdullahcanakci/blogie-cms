@@ -5,10 +5,18 @@ https://github.com/UnlyEd/next-right-now/blob/e6f625820726d24967b4b14a5f32c93266
 import { config, library } from "@fortawesome/fontawesome-svg-core";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronRight,
+  faChevronLeft,
+  faSave,
+} from "@fortawesome/free-solid-svg-icons";
 
 config.autoAddCss = false;
 
 library.add(
-  faChevronDown // chevron-down
+  faChevronDown, // chevron-down
+  faChevronLeft, // chevron-left
+  faChevronRight, // chevron-right
+  faSave // save
 );

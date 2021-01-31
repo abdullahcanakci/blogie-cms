@@ -1,16 +1,24 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Button({ label, onSave }) {
+export default function Button({
+  label,
+  onClick,
+  children,
+  buttonClasses = "",
+  iconLeft = false,
+  iconRight = false,
+}) {
   const [clickable, setClickable] = useState(true);
 
-  const onSaveButton = async (event) => {
+  const onClicked = async (event) => {
     if (clickable) {
       setClickable(false);
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      if (typeof onSave === "function") {
-        await onSave();
+      if (typeof onClick === "function") {
+        await onClick();
       } else {
-        console.error("Button.onSave is not a function");
+        console.error("Button.onClick is not a function");
       }
       setClickable(true);
     }
@@ -21,11 +29,23 @@ export default function Button({ label, onSave }) {
     <button
       type="submit"
       className={
-        "button is-primary" + (!clickable ? " is-loading disabled" : "")
+        "button is-primary" +
+        (!clickable ? " is-loading disabled " : " ") +
+        buttonClasses
       }
-      onClick={onSaveButton}
+      onClick={onClicked}
     >
-      Save
+      {iconLeft && (
+        <span className="icon is-small mr-1">
+          <FontAwesomeIcon icon={iconLeft} />
+        </span>
+      )}
+      {children}
+      {iconRight && (
+        <span className="icon is-small ml-1">
+          <FontAwesomeIcon icon={iconRight} />
+        </span>
+      )}
     </button>
   );
 }

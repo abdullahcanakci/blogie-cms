@@ -25,12 +25,17 @@ I wanted something statically generated for blogs but also has dynamicity for se
 
 ### CMS
 
-- [ ] Articles List
+- [x] Articles List
+  - [ ] Pagination
 - [ ] Draft System
-- [ ] Insert/Update
+- [x] Insert/Update
 - [x] Auth
   - [x] Login
   - [x] Register
+
+### Related
+
+- [ ] Dart theme
 
 ### To Use
 
