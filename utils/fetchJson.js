@@ -14,7 +14,7 @@ export default async function fetcJson(...args) {
     error.response = response;
     error.data = data;
   } catch (error) {
-    console.log(error.response.status);
+    console.log(error.response);
     if (!error.data) {
     }
   }

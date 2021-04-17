@@ -1,5 +1,5 @@
+import "../styles/admin.css";
 import "../styles/globals.scss";
-import "utils/icons";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
