@@ -1,9 +1,7 @@
 const Card = ({ children, className = "" }) => {
   return (
-    <div className={className}>
-      <div className="card o-hidden border-0 shadow-lg my-5">
-        <div className="card-body p-4">{children}</div>
-      </div>
+    <div className={`card m-3 shadow border-light ${className}`}>
+      <div className="card-body ">{children}</div>
     </div>
   );
 };

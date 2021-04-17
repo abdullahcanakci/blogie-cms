@@ -9,6 +9,5 @@ export default async function handler(req, res) {
   const article = await db
     .collection("articles")
     .findOne({ slug: article_slug });
-
   res.json(article);
 }

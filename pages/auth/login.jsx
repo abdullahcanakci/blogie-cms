@@ -38,37 +38,26 @@ const Login = () => {
                 <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
               </div>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-group">
+                <div className="mb-3">
                   <input
                     type="email"
-                    className="form-control form-control-user"
+                    className="form-control"
                     id="exampleInputEmail"
                     aria-describedby="emailHelp"
                     placeholder="Enter Email Address..."
                     {...register("email")}
                   />
                 </div>
-                <div className="form-group">
+                <div className="mb-3">
                   <input
                     type="password"
-                    className="form-control form-control-user"
+                    className="form-control"
                     id="exampleInputPassword"
                     placeholder="Password"
                     {...register("password")}
                   />
                 </div>
-                <div className="form-group">
-                  <div className="custom-control custom-checkbox small">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="customCheck"
-                    />
-                    <label className="custom-control-label" for="customCheck">
-                      Remember Me
-                    </label>
-                  </div>
-                </div>
+
                 <button
                   type="submit"
                   className="btn btn-primary btn-user btn-block"

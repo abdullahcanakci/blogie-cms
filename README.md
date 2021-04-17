@@ -4,7 +4,7 @@
 
 ## A minimal NextJS blogging platform.
 
-A blogging platform powered by NextJS, Bulma and MongoDB.
+A blogging platform powered by NextJS and MongoDB.
 
 I wanted something statically generated for blogs but also has dynamicity for search, lists, categories, tags etc. This project aims to make them more accessible.
 
@@ -25,7 +25,7 @@ I wanted something statically generated for blogs but also has dynamicity for se
 
 ### CMS
 
-- [x] Articles List
+- [ ] Articles List
   - [ ] Pagination
 - [ ] Draft System
 - [x] Insert/Update
