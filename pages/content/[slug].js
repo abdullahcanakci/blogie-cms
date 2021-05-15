@@ -1,15 +1,10 @@
 import withSession from "@utils/withSession";
-import { connectToDatabase } from "utils/mongodb";
-import Dashboard from "components/layout/Dashboard";
-import Table from "components/Table/Table";
-import Row from "components/Row";
-import { Cell } from "components/Table";
-import { Edit2, Eye, Trash2 } from "react-feather";
 import classNames from "classnames";
-import Card from "components/card/Card";
 import Link from "next/link";
-import Button from "../../components/Button";
 import { useRouter } from "next/router";
+import { Edit2, Eye, Trash2 } from "react-feather";
+import { connectToDatabase } from "utils/mongodb";
+import { Dashboard, Row, Card, Button, Table } from "components";
 
 export default function CmsPage({ articles, slug }) {
   const router = useRouter();
@@ -24,8 +19,8 @@ export default function CmsPage({ articles, slug }) {
       </Row>
       <Card>
         <Table data={articles}>
-          <Cell label="Başlık" name="title" />
-          <Cell
+          <Table.Cell label="Başlık" name="title" />
+          <Table.Cell
             label="Taslak"
             name="draft"
             center
@@ -40,7 +35,7 @@ export default function CmsPage({ articles, slug }) {
               </span>
             )}
           />
-          <Cell
+          <Table.Cell
             label="Islevler"
             name="_id"
             center

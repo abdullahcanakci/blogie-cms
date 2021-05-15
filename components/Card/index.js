@@ -25,4 +25,4 @@ Card.Body = CardBody;
 Card.Header = CardHeader;
 Card.Footer = CardFooter;
 
-export default Card;
+export { Card };

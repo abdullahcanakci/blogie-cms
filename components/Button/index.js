@@ -24,4 +24,4 @@ const Button = ({ label, onClick, style = "primary", type = "button" }) => {
   );
 };
 
-export default Button;
+export { Button };

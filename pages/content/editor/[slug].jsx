@@ -1,13 +1,15 @@
 import { ObjectId } from "mongodb";
 import { HOST } from "config";
-import Dashboard from "components/layout/Dashboard";
+import {
+  Dashboard,
+  Input,
+  Checkbox,
+  Select,
+  Editor as TextEditor,
+  Button,
+  Card,
+} from "components";
 import { useForm } from "react-hook-form";
-import Card from "components/card/Card";
-import Input from "components/Form/Inpux";
-import Button from "components/Button";
-import { default as TextEditor } from "components/Form/Editor";
-import Checkbox from "components/Form/Checkbox";
-import Select from "components/Form/Select";
 
 const Editor = ({ article }) => {
   const { control, handleSubmit } = useForm({ defaultValues: article });

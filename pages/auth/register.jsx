@@ -1,11 +1,10 @@
 import Button from "components/Button";
-import Card from "components/card/Card";
-import Input from "components/Form/Inpux";
+import { Button, Card, Input } from "components";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import fetchJson from "utils/fetchJson";
 import useUser from "utils/useUser";
-import CenterLayout from "../../components/layout/CenterLayout";
+import { CenterLayout } from "components";
 
 const Register = () => {
   const { handleSubmit, control } = useForm();

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Card from "components/card/Card";
+import Card from "components/Card";
 import Input from "components/Form/Inpux";
 import Dashboard from "components/layout/Dashboard";
 import Table, { Cell } from "components/Table";

@@ -1,5 +1,4 @@
-import Dashboard from "components/layout/Dashboard";
-import Layout from "../components/layout/Layout";
+import { Dashboard } from "components";
 
 export default function Home() {
   return <Dashboard current="home"></Dashboard>;

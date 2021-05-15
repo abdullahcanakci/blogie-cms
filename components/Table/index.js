@@ -1,6 +1,6 @@
 import Table from "./Table";
 import Cell from "./Cell";
 
-export default Table;
+Table.Cell = Cell;
 
-export { Cell };
+export { Table };

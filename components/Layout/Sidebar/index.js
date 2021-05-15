@@ -7,5 +7,4 @@ import Sidebar from "./Sidebar";
 import Link from "./Link";
 import Dropdown from "./Dropdown";
 
-export default Sidebar;
-export { Link, Dropdown };
+export { Sidebar, Link, Dropdown };
