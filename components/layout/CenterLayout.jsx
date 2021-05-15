@@ -1,12 +1,7 @@
+import styles from "./layout.module.scss";
+
 const CenterLayout = ({ children }) => {
-  return (
-    <div
-      className="container d-flex justify-content-center flex-column"
-      style={{ height: "100vh" }}
-    >
-      <div className="row justify-content-center">{children}</div>
-    </div>
-  );
+  return <div className={styles.center_container}>{children}</div>;
 };
 
 export default CenterLayout;

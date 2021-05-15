@@ -1,0 +1,42 @@
+.container {
+  @apply w-full bg-white shadow-md rounded;
+}
+
+.header {
+  @apply bg-gray-200 text-gray-600 uppercase text-sm leading-normal;
+
+  th {
+    @apply py-3 px-6 text-left;
+    &.center {
+      @apply text-center;
+    }
+  }
+}
+
+.table {
+  @apply text-gray-600 text-sm font-light;
+}
+
+.tr {
+  @apply border-b border-gray-200 hover:bg-gray-100;
+
+  &:nth-child(even) {
+    @apply bg-gray-50 hover:bg-gray-100;
+  }
+
+  td {
+    @apply py-3 px-6 text-left;
+    &.center {
+      @apply text-center;
+    }
+
+    div {
+      @apply flex items-center;
+      @apply font-medium;
+
+      &.center {
+        @apply justify-center;
+      }
+    }
+  }
+}

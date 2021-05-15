@@ -9,18 +9,21 @@ export default withSession(async (req, res) => {
 
   if (email == null || email == "" || password == "" || password == null) {
     res.status(422).json({ errors: { general: ["Wrong credentials"] } });
+    return;
   }
 
   const user = await db.collection("users").findOne({ email: email });
 
   if (!user) {
     res.status(422).json({ errors: { general: ["Wrong credentials"] } });
+    return;
   }
 
   const valid = await checkPassword(user.password, password);
 
   if (!valid) {
     res.status(403).json({ errors: { general: ["Wrong credentials"] } });
+    return;
   }
 
   try {

@@ -1,0 +1,16 @@
+.card {
+  @apply bg-white border-0 shadow-lg sm:rounded-xl;
+  @apply m-2;
+}
+
+.card_body {
+  @apply p-6;
+}
+
+.card_header {
+  @apply px-6 pt-6;
+}
+
+.card_footer {
+  @apply pb-6;
+}

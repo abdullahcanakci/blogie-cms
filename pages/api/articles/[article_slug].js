@@ -1,4 +1,6 @@
 import { connectToDatabase } from "@utils/mongodb";
+import { ObjectId } from "mongodb";
+
 export default async function handler(req, res) {
   const {
     query: { article_slug },
@@ -8,6 +10,6 @@ export default async function handler(req, res) {
 
   const article = await db
     .collection("articles")
-    .findOne({ slug: article_slug });
+    .findOne({ _id: ObjectId(article_slug) });
   res.json(article);
 }

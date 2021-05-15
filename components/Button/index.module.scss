@@ -1,0 +1,39 @@
+/* 
+    https://tailwindcomponents.com/component/button-component
+*/
+
+.button {
+  @apply focus:outline-none text-white text-sm py-2.5 px-5 rounded-md hover:shadow-lg;
+
+  &.primary {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+
+  &.secondary {
+    @apply bg-gray-500 hover:bg-gray-600;
+  }
+
+  &.success {
+    @apply bg-green-500 hover:bg-green-600;
+  }
+
+  &.danger {
+    @apply bg-red-500 hover:bg-red-600;
+  }
+
+  &.warning {
+    @apply bg-yellow-500 hover:bg-yellow-600;
+  }
+
+  &.info {
+    @apply bg-purple-500 hover:bg-purple-600;
+  }
+
+  &.dark {
+    @apply bg-gray-700 hover:bg-gray-900;
+  }
+
+  &.has_icon {
+    @apply flex items-center;
+  }
+}

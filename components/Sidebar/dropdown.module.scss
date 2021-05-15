@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+}
+
+.button {
+  @apply flex flex-row items-center w-full px-4 py-2 my-2 text-sm font-semibold text-left bg-transparent rounded-lg dark:bg-transparent dark:focus:text-white dark:hover:text-white dark:focus:bg-gray-600 dark:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+}
+
+.links_expander {
+  display: none;
+  @apply w-full mt-2 rounded-md shadow-lg;
+
+  &:has(> .expanded) {
+    display: initial;
+  }
+}
+.expanded {
+  display: block;
+}
+
+.links_container {
+  @apply px-2 py-2 bg-white rounded-md shadow dark:bg-gray-800;
+}

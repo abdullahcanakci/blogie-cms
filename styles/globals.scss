@@ -1,5 +1,8 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-.invalid-feedback {
-  display: block;
+.pill {
+  @apply py-1 px-3 rounded-full text-xs;
+  @apply text-gray-800;
 }

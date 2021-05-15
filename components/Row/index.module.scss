@@ -1,0 +1,11 @@
+.row {
+  @apply m-2 flex flex-row;
+}
+
+.start {
+  @apply justify-start;
+}
+
+.end {
+  @apply justify-end;
+}

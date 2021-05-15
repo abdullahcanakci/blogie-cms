@@ -1,0 +1,7 @@
+.dashboard_container {
+  @apply md:flex flex-col md:flex-row md:min-h-screen w-full;
+}
+
+.center_container {
+  @apply h-screen bg-white flex flex-col justify-center items-center;
+}
